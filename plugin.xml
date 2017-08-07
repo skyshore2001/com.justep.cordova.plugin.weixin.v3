@@ -65,7 +65,7 @@
 		<framework src="libz.dylib" />
 		<framework src="libc++.dylib" />
 		<framework src="SystemConfiguration.framework" />
-
+		<framework src="CoreTelephony.framework" />
 
 
 		<header-file src="src/ios/JSONKit/JSONKit.h" />

@@ -197,7 +197,7 @@
             break;
             
             case WXErrCodeUserCancel:
-                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"用户点击取消并返回"];
+                result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@""]; // 用户点击取消并返回
             break;
             
             case WXErrCodeSentFail:

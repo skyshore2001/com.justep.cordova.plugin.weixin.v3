@@ -38,10 +38,16 @@
 	}, function () {
 		//alert("Success");
 	}, function (reason) {
-		alert("Failed: " + reason);
+		// 当reason为空时，为用户取消分享操作。
+		if (reason)
+			alert("Failed: " + reason);
 	});
 
 关于支付，一般建议由后端服务调用prepay生成prepayId传给APP，再由APP调用 sendPayReq 接口。
 
 接口参考：www/weixin.js
+
+## bugs
+
+- 用户取消分享时，安卓平台会当作成功处理。
 
