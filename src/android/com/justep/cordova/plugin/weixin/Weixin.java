@@ -135,9 +135,9 @@ public class Weixin extends CordovaPlugin{
 
 	protected void getWXAPI() {
 		if (api == null) {
-			app_id = webView.getProperty("weixinappid", "");
+			app_id = webView.getPreferences().getString("weixinappid", "");
 			api = WXAPIFactory.createWXAPI(webView.getContext(), app_id, true);
-			Boolean registered = api.registerApp(webView.getProperty("weixinappid", ""));
+			Boolean registered = api.registerApp(webView.getPreferences().getString("weixinappid", ""));
 		}
 	}
 
@@ -573,10 +573,10 @@ public class Weixin extends CordovaPlugin{
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
-		partner_key = webView.getProperty("partner_key", "");
-		partner_id = webView.getProperty("partner_id", "");
-		app_secret = webView.getProperty("app_secret", "");
-		app_key = webView.getProperty("app_key", "");
+		partner_key = webView.getPreferences().getString("partner_key", "");
+		partner_id = webView.getPreferences().getString("partner_id", "");
+		app_secret = webView.getPreferences().getString("app_secret", "");
+		app_key = webView.getPreferences().getString("app_key", "");
 		getWXAPI();
 		this.onWeixinResp(cordova.getActivity().getIntent());
 	}

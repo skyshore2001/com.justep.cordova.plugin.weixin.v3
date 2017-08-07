@@ -437,9 +437,9 @@ public class WeixinV3 extends CordovaPlugin{
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
 		super.initialize(cordova, webView);
-		app_id = webView.getProperty("weixin_appid", "");
-		partner_id = webView.getProperty("weixin_partner_id", "");
-		api_key = webView.getProperty("weixin_api_key", "");
+		app_id = webView.getPreferences().getString("weixin_appid", "");
+		partner_id = webView.getPreferences().getString("weixin_partner_id", "");
+		api_key = webView.getPreferences().getString("weixin_api_key", "");
 		getWXAPI();
 		this.onWeixinResp(cordova.getActivity().getIntent());
 	}

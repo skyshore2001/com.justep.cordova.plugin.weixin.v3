@@ -1,5 +1,4 @@
-package com.justep.x5.v3.wxapi;
-
+package {PACKAGE_NAME}.wxapi;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.justep.cordova.Config;
-import com.justep.x5.base.Constants;
+//import com.justep.x5.base.Constants;
 import com.tencent.mm.sdk.constants.ConstantsAPI;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
@@ -46,7 +45,8 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 		if (resp.getType() == ConstantsAPI.COMMAND_PAY_BY_WX) {
 			Intent intent;
 			try {
-				intent = new Intent(this, WXPayEntryActivity.class.getClassLoader().loadClass(Constants.PACKNAME+ "."+ Constants.ACTIVITYCLASSNAME));
+				// !!!! >>>LJ: change package name
+				intent = new Intent(this, WXPayEntryActivity.class.getClassLoader().loadClass("{PACKAGE_NAME}"));
 				Bundle bundle=new Bundle();
 				bundle.putInt("weixinPayRespCode",  resp.errCode);
 				bundle.putString("intentType", "com.justep.cordova.plugin.weixin.Weixin");

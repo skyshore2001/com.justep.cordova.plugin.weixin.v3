@@ -6,6 +6,10 @@
 		<clobbers target="navigator.weixin" />
 	</js-module>
 
+	<preference name="WEIXIN_APPID" />
+	<preference name="WEIXIN_PARTNER_ID" />
+	<preference name="WEIXIN_API_KEY" />
+
 	<!-- ios -->
 	<platform name="ios">
 		<config-file target="config.xml" parent="/*">
@@ -13,9 +17,9 @@
 				<param name="ios-package" value="CDVWeixinV3" />
 				<param name="onload" value="true" />
 			</feature>
-			<preference name="weixin_appid" value="$weixin_appid" />
-			<preference name="weixin_partner_id" value="$weixin_partner_id" />
-			<preference name="weixin_api_key" value="$weixin_api_key" />
+			<preference name="weixin_appid" value="$WEIXIN_APPID" />
+			<preference name="weixin_partner_id" value="$WEIXIN_PARTNER_ID" />
+			<preference name="weixin_api_key" value="$WEIXIN_API_KEY" />
 		</config-file>
 		
 		<header-file src="src/ios/CDVWeixin.h" />
@@ -78,7 +82,7 @@
 					<string>weixin</string>
 					<key>CFBundleURLSchemes</key>
 					<array>
-						<string>$weixin_appid</string>
+						<string>$WEIXIN_APPID</string>
 					</array>
 				</dict>
 			</array>
@@ -91,20 +95,21 @@
 		<hook type="before_plugin_rm" src="scripts/android/changePackage.js" />
 
 		<config-file target="res/xml/config.xml" parent="/*">
-			<preference name="weixin_appid" value="$weixin_appid" />
-			<preference name="weixin_partner_id" value="$weixin_partner_id" />
-			<preference name="weixin_api_key" value="$weixin_api_key" />
+			<preference name="weixin_appid" value="$WEIXIN_APPID" />
+			<preference name="weixin_partner_id" value="$WEIXIN_PARTNER_ID" />
+			<preference name="weixin_api_key" value="$WEIXIN_API_KEY" />
 			<feature name="Weixin">
 				<param name="android-package" value="com.justep.cordova.plugin.weixin.WeixinV3" />
 				<param name="onload" value="true" />
 			</feature>
 		</config-file>
 
-		<config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:name='X5']">
+		<!-- >>> LJ: change 'X5' to 'MainActivity' -->
+		<config-file target="AndroidManifest.xml" parent="/manifest/application/activity[@android:name='MainActivity']">
 			<intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
-				<data android:scheme="$weixin_appid" />
+				<data android:scheme="$WEIXIN_APPID" />
 			</intent-filter>
 		</config-file>
 
@@ -120,6 +125,10 @@
 		</config-file>
 
 		<source-file src="src/android/libammsdk.jar" target-dir="libs" />
+<!-- >>> LJ -->
+		<source-file src="src/android/httpclient-4.1.1.jar" target-dir="libs" />
+		<source-file src="src/android/httpcore-4.1.jar" target-dir="libs" />
+<!-- <<< -->
 		<source-file src="src/android/com/justep/cordova/Config.java" target-dir="src/com/justep/cordova" />
 		<source-file src="src/android/com/justep/cordova/ConfigXmlParser.java" target-dir="src/com/justep/cordova" />
 		<source-file src="src/android/com/justep/cordova/CordovaPreferences.java" target-dir="src/com/justep/cordova" />
@@ -127,6 +136,8 @@
 		<source-file src="src/android/com/justep/cordova/plugin/weixin/Weixin.java" target-dir="src/com/justep/cordova/plugin/weixin" />
 		<source-file src="src/android/com/justep/cordova/plugin/weixin/WeixinV3.java" target-dir="src/com/justep/cordova/plugin/weixin" />
 		<source-file src="src/android/com/justep/cordova/plugin/weixin/PayOrder.java" target-dir="src/com/justep/cordova/plugin/weixin" />
+		
+<!-- >>>> LJ: bugfix -->
 		<source-file src="src/android/com/justep/x5/v3/wxapi/WXPayEntryActivity.java" target-dir="src/com/justep/x5/v3/wxapi" />
 		<source-file src="src/android/net/sourceforge/simcpux/AppRegister.java" target-dir="src/net/sourceforge/simcpux" />
 		<source-file src="src/android/net/sourceforge/simcpux/MD5.java" target-dir="src/net/sourceforge/simcpux" />

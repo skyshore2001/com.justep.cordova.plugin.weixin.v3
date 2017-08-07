@@ -59,7 +59,7 @@ module.exports = function (context) {
 
 
     if(context.hook == "after_plugin_install"){
-        replace(wxPayEntryActivityPath, 'package com.justep.x5.v3.wxapi;', "package " + packageName + ".wxapi;");
+        replace(wxPayEntryActivityPath, '{PACKAGE_NAME}', packageName);
         shell.mkdir('-p', wxPayEntryActivityDestDir);
         events.emit('verbose', 'Copying from location "' + wxPayEntryActivityPath + '" to location "' + wxPayEntryActivityDestDir + '"');
         shell.mv(wxPayEntryActivityPath, wxPayEntryActivityDestDir);    
