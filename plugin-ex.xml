@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.justep.cordova.plugin.weixin.v3">
+	<name>微信v3</name>
+	<description>微信v3本地扩展插件，包括微信支付和微信分享</description>
+
+	<!-- common -->
+	<platform name="common">
+		<param name="weixin_appid" displayName="微信应用ID" />
+		<param name="weixin_partner_id" displayName="微信商户ID" defaultValue="微信支付必填"/>
+		<param name="weixin_api_key" displayName="微信api_key" defaultValue="微信支付必填"/>
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+	</platform>
+
+	<!-- android -->
+	<platform name="android">
+	</platform>
+	
+</plugin>

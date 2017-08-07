@@ -1,0 +1,143 @@
+/**
+	@name com.justep.cordova.plugin.weixin.v3
+	@class 
+	@description 微信插件
+	@model Native
+	@category EventClass
+	@declareVar navigator.weixin
+*/
+
+/**
+	@name com.justep.cordova.plugin.weixin.v3.generatePrepayId
+	@function
+	@param {Object} orderInfo 订单信息
+	<br/><b>参数格式：</b>
+	<xmp>
+		{
+ 	 		"body":String - 商品详情,
+ 	 		"feeType":Number - 价格,单位元,
+ 	 		"notifyUrl":String - 服务器通知路径 ,
+ 	 		"totalFee":String - 费用总计 ,
+ 	 		"traceId":String - 订单标识 ,
+ 	 		"tradeNo":String - 唯一订单号:
+		}
+	</xmp>	
+ 	@param {Function} onSuccess 执行成功回调函数
+ 	@param {Function} onError 执行失败回调函数
+ 	@returns {void}
+ 	@description 微信支付
+*/
+	
+/**
+   @name com.justep.cordova.plugin.weixin.v3.share
+   @function
+   @see com.justep.cordova.plugin.weixin.v3#Type
+   @see com.justep.cordova.plugin.weixin.v3#Scene
+   @param {Object} message 分享信息
+   <br/><b>参数格式：</b>
+   <xmp>
+	   {
+ 	 	   "title":String - 分享标题,
+ 	 	   "description":String - 描述,
+ 	 	   "mediaTagName":String - 服务器通知路径 ,
+ 	 	   "thumb":String - 缩略图路径，不能大于32kb ,
+ 	 	   "media":Object - 分享的介质 
+ 	 	   media格式
+ 	 	   {
+ 	 		   "type": String - 分享类型，com.justep.cordova.plugin.weixin.v3#Type参数常量
+ 	 		   "webpageUrl": 分享链接，
+ 	 	   },
+ 	 	   "scene":string - 场景,com.justep.cordova.plugin.weixin.v3#Scene参数常量
+	    }
+    </xmp>	
+    @param {function} onSuccess 执行成功回调函数
+    @param {function} onError 执行失败回调函数
+    @returns {object}
+    @description 微信分享
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type
+   @class
+   @description 微信分享类型
+   @model Native
+   @category EventClass
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.APP
+   @property
+   @type String
+   @description 微信分享类型常量 = 1
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.EMOTION
+   @property
+   @type String
+   @description 微信分享类型常量 = 2
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.FILE
+   @property
+   @type String
+   @description 微信分享类型常量 = 3
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.IMAGE
+   @property
+   @type String
+   @description 微信分享类型常量 = 4
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.MUSIC
+   @property
+   @type String
+   @description 微信分享类型常量 = 5
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.VIDEO
+   @property
+   @type String
+   @description 微信分享类型常量 = 6
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Type.WEBPAGE
+   @property
+   @type String
+   @description 微信分享类型常量 = 7
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Scene
+   @class
+   @description 微信分享场景
+   @model Native
+   @category EventClass
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Scene.SESSION
+   @property
+   @type String
+   @description 微信分享类型常量 = 0 聊天界面
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Scene.TIMELINE
+   @property
+   @type String
+   @description 微信分享类型常量 = 1 朋友圈
+*/
+
+/**
+   @name com.justep.cordova.plugin.weixin.v3#Scene.FAVORITE
+   @property
+   @type String
+   @description 微信分享类型常量 = 2 收藏
+*/
